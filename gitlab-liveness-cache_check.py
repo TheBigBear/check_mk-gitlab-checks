@@ -2,10 +2,10 @@
 
 import json
 import sys
-import subprocess
+import os
 from pprint import pprint
 
-jdata = subprocess.call(["curl", "-s", "https://localhost/-/liveness", "--insecure"])
+jdata = os.popen('curl -s https://localhost/-/liveness --insecure').read()
 
 data = json.load(jdata)
 
