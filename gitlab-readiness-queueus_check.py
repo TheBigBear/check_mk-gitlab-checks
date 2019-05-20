@@ -1,6 +1,14 @@
-curl -s https://localhost/-/readiness --insecure | \
-sed -e 's/[{}]/''/g' | \
-awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}' | \
-sed ':a;N;$!ba;s/\n/\t/g' | \
-sed -e 's/[:]/\t/g' | \
-sed -e 's/["]//g'
+import json
+import sys
+from pprint import pprint
+
+jdata = open(sys.argv[1])
+
+data = json.load(jdata)
+
+if data['queues_check']['status'] == 'ok':
+    print ('0 gitlab-readiness-queues_check - readiness-queues_check status: ' + data['queues_check']['status'])
+else:
+    print ('2 gitlab-readiness-queues_check - readiness-queues_check status: ' + data['queues_check']['status'])    
+
+jdata.close()
