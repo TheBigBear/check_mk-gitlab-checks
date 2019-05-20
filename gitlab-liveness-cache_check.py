@@ -6,7 +6,7 @@ jdata = open(sys.argv[1])
 
 data = json.load(jdata)
 
-if data['cache_check']['status'] == 'OK':
+if data['cache_check']['status'] == 'ok':
     print ('0 gitlab-liveness-db_check - liveness-db_check status: ' + data['cache_check']['status'])
 else:
     print ('2 gitlab-liveness-db_check - liveness-db_check status: ' + data['cache_check']['status'])    
