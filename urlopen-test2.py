@@ -5,8 +5,10 @@ import urllib.request
 
 with urllib.request.urlopen('https://git.ict.om.org/-/liveness') as response:
     response = response.read()
-   
+
     obj = response
+
+    print (response)
 
     def dump(obj, nested_level=0, output=sys.stdout):
         spacing = '   '
@@ -30,4 +32,4 @@ with urllib.request.urlopen('https://git.ict.om.org/-/liveness') as response:
         else:
             print >> output, '%s%s' % (nested_level * spacing, obj)
 
-    dump(obj)   
+    dump(obj)
