@@ -1,7 +1,7 @@
 import sys
 from urllib.request import Request, urlopen
 from urllib.error import URLError
-req = Request('https://localhost/-/liveness')
+req = Request('https://git.ict.om.org/-/liveness')
 try:
     response = urlopen(req)
 except URLError as e:
