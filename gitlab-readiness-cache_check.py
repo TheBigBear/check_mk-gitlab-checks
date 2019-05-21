@@ -1,4 +1,4 @@
-#/bin/pythom2
+#!/bin/pythom2
 
 import json
 import sys
