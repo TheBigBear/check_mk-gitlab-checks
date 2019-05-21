@@ -1,3 +1,5 @@
+#!/bin/python3
+
 import sys
 from urllib.request import Request, urlopen
 from urllib.error import URLError
@@ -35,4 +37,5 @@ else:
         else:
             print >> output, '%s%s' % (nested_level * spacing, obj)
 
-            dump (obj)
+        dump (obj)
+            
