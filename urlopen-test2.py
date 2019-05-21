@@ -1,9 +1,15 @@
 #!/bin/python3
 
-import sys
-import urllib.request
+try:
+    # For Python 3.0 and later
+    from urllib.request import urlopen
+except ImportError:
+    # Fall back to Python 2's urllib2
+    from urllib2 import urlopen
 
-with urllib.request.urlopen('https://git.ict.om.org/-/liveness') as response:
+import sys
+
+with urlopen('https://git.ict.om.org/-/liveness') as response:
     response = response.read()
 
     obj = response
