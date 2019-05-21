@@ -3,7 +3,7 @@
 import sys
 import urllib.request
 
-with urllib.request.urlopen('https://localhost/-/liveness') as response:
+with urllib.request.urlopen('https://git.ict.om.org/-/liveness') as response:
     response = response.read()
    
     obj = response
